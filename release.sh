@@ -87,4 +87,5 @@ update() {
   github "$version" "$1"
 }
 
-update "$@"
+#update "$@"
+github "$version" "$1"
