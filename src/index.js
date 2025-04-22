@@ -52,7 +52,14 @@ export const HudGamePad = (function() {
      */
     observe: function() {
       return gamepad.observe();
-    }
+    },
+
+    /**
+     * Stops the gamepad and clears the canvas.
+     */
+    stop: function() {
+      return gamepad.stop();
+    },
   };
 })();
 

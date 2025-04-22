@@ -7,7 +7,9 @@ describe('GamePad', () => {
 
   beforeEach(() => {
     // Get the canvas and context
-    const canvas = document.getElementById('gamepad');
+    const canvas = document.createElement('canvas');
+    canvas.id = 'gamepad';
+    document.body.appendChild(canvas);
     mockContext = canvas.getContext('2d');
 
     // Create and store spies
@@ -24,6 +26,14 @@ describe('GamePad', () => {
   });
 
   afterEach(() => {
+    const canvas = document.getElementById('gamepad');
+    if(canvas) {
+      document.body.removeChild(canvas);
+
+      setTimeout(() => {
+        GamePad.stop();
+      }, 100);
+    }
     sinon.restore();
   });
 

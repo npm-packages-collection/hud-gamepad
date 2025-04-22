@@ -44,7 +44,6 @@ export class GamePad {
     // Initialize display
     await this.init().then(() => {
       setTimeout(() => {
-        console.log('GamePad ready');
         this.draw();
         this.startLoop();
       },100);
